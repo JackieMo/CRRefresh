@@ -112,6 +112,20 @@ open class CRRefreshComponent: UIView {
             ]
         }
     }
+    
+    // TODO: 暂时处理
+    // declarations in extensions cannot override yet swift 4
+    public func start() {
+        isRefreshing = true
+    }
+    
+    public func stop() {
+        isRefreshing = false
+    }
+    
+    public func sizeChange(change: [NSKeyValueChangeKey : Any]?) {}
+    
+    public func offsetChange(change: [NSKeyValueChangeKey : Any]?) {}
 }
 
 //MARK: Public Methods
@@ -148,17 +162,17 @@ extension CRRefreshComponent {
         isIgnoreObserving = ignore
     }
     
-    public func start() {
-        isRefreshing = true
-    }
-    
-    public func stop() {
-        isRefreshing = false
-    }
-    
-    public func sizeChange(change: [NSKeyValueChangeKey : Any]?) {}
-    
-    public func offsetChange(change: [NSKeyValueChangeKey : Any]?) {}
+//    public func start() {
+//        isRefreshing = true
+//    }
+//
+//    public func stop() {
+//        isRefreshing = false
+//    }
+//
+//    public func sizeChange(change: [NSKeyValueChangeKey : Any]?) {}
+//
+//    public func offsetChange(change: [NSKeyValueChangeKey : Any]?) {}
 }
 
 //MARK: Observer Methods 
